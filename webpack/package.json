@@ -1,0 +1,16 @@
+{
+  "name": "webpack-test",
+  "version": "1.0.0",
+  "description": "## Install",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack && open index.html"
+  },
+  "keywords": [],
+  "author": "@pabagan",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.3.1"
+  }
+}
