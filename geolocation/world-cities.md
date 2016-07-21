@@ -1,0 +1,1 @@
+http://data.okfn.org/data/core/world-cities#resource-world-cities
