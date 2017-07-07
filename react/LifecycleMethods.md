@@ -18,11 +18,10 @@ Update is caused by changes to props or state and component is re-rendered.
 
 | Method | Use |
 | --- | --- | 
-| `shouldComponentUpdate(nextProps, nextState)` | called before the render and enables to define if re-rendering is needed or not (boolean must be returned) when new props or state is received. Returning False make  `componentWillUpdate()`, `render()`, and `componentDidUpdate()` will not be invoked.  | 
-| `componentWillUpdate(nextProps, nextState)` | called immediately before rendering when new props or state are received. It is used to prepare an update, not called for initial `render()`.  Cannot call  `this.setState()`. If you need to update state in response to a prop change, use componentWillReceiveProps()  | 
+| `shouldComponentUpdate(nextProps, nextState)` | called before the render and define if re-rendering is needed (boolean must be returned) when new props or state is received. Returning False make  `componentWillUpdate()`, `render()`, and `componentDidUpdate()` will not be invoked. | 
+| `componentWillUpdate(nextProps, nextState)` | called immediately before rendering when new props or state are received. It is used to prepare an update, not called for initial `render()`.  Cannot call  `this.setState()`. If you need to update state in response to a prop change, use componentWillReceiveProps() | 
 | `render()` | --- | 
 | `componentDidUpdate()` | is called after updating occurs. Used to perform DOM operations after data has been updated. | 
-
 
 Updating `Props` adds a new one extra method:
 
@@ -88,7 +87,6 @@ componentWillReceiveProps(nextProps) {
 ## setState()
 
 Method to inform react a component, at UI, needs to be updated `setState(stateChange, [callback])`.
-
 
 ```js
 // changes should be represented by building a new state object 
