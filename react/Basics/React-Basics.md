@@ -1,10 +1,9 @@
 # Automatic build APP
 
-* [React Docs](https://facebook.github.io/react/docs/hello-world.html).
 * [Create React App](https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html).
 
 ```bash
-# Install 
+# Install
 npm install -g create-react-app
 
 # Create App
@@ -198,7 +197,7 @@ setInterval(tick, 1000);
 ```
 
 
-### trully component update 
+### trully component update
 We need to add state to the components. To do so let's create a class:
 
 ```js
@@ -520,7 +519,7 @@ const listItems = numbers.map((number) =>
   </li>
 );
 
-//  use IDs 
+//  use IDs
 const todoItems = todos.map((todo) =>
   <li key={todo.id}>
     {todo.text}

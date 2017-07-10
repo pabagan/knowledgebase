@@ -1,5 +1,5 @@
 #!/bin/bash
-# Using Ubuntu 16.04 default repo 
+# Using Ubuntu 16.04 default repo
 sudo apt-get install -y nodejs
 
 # Npm installs

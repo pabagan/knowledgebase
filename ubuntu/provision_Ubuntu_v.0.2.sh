@@ -52,28 +52,34 @@ git config --global user.email "pabagan@gmail.com"
 # NodeJs and npm
 #
 # -------------------------------------
-# Using Ubuntu 16.04 default repo 
+# Using Ubuntu 16.04 default repo
 sudo apt-get install -y nodejs
 
 # angular2 dependencies
-npm update -g && sudo npm install -g 
+npm update -g && sudo npm install -g
 
 
 # Npm installs
-npm install -g \ 
-  concurrently \ 
-  lite-server \ 
-  typescript \ 
+npm install -g \
+  concurrently \
+  lite-server \
+  typescript \
   angular-cli \
+npm update -g && sudo npm install -g concurrently lite-server typescript angular-cli
+
+# Npm installs
+npm install -g \
   bower \
   ember \
   ember-cli \
   express \
+  google-spreadsheet-to-json \
   grunt \
   grunt-cli \
   generator-meanjs \
   gulp \
   gulp-cli \
+  node-gyp \
   karma-cli \
   mean-cli \
   protractor \
@@ -187,7 +193,7 @@ sudo apt-get -y install qbittorrent
 sudo add-apt-repository -y "deb https://cli-assets.heroku.com/branches/stable/apt ./"
 curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
 sudo apt-get -y update
-sudo apt-get install -y heroku 
+sudo apt-get install -y heroku
 
 # -------------------------------------
 #
@@ -202,24 +208,24 @@ sudo apt-get update && apt-get -y install sqlitebrowser
 # -------------------------------------
 #
 # Genymotion: Android Emulator
-# 
+#
 # Hay que ir manual:
 # https://www.genymotion.com/download/
-# 
+#
 # -------------------------------------
 
 # -------------------------------------
 #
 # Android Studio
-# 
+#
 # https://developer.android.com/studio/index.html
-# 
+#
 # -------------------------------------
 sudo add-apt-repository ppa:paolorotolo/android-studio -y
 sudo apt-get update
 sudo apt-get -y install android-studio
 
 # Manual
-# Descargar: https://developer.android.com/studio/index.html 
+# Descargar: https://developer.android.com/studio/index.html
 # https://developer.android.com/studio/install.html
 # sudo apt-get -y install lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
