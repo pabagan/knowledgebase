@@ -169,6 +169,7 @@ function neverReturns(): never{
 ### Nullable types
 
 Usefull to be aware of not defining null in the code.
+
 ```ts
 let canBeNull = 12;
 canBeNull = null;   // assign null to clear values
