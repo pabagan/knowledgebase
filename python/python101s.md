@@ -16,17 +16,6 @@
 - [Objects](#objects)
 - [Files](#files)
 
-
-## Print
-```python
-print("The answer is", 2*2)
-print(x, end=" ")  # Appends a space instead of a newline
-print()            # You must call the function!
-print("fatal error", file=sys.stderr)
-print((x, y))      # Not the same as print(x, y)!
-```
-
-
 ## Variables, expresions y statements
 
 ```py
@@ -58,7 +47,6 @@ type(xxx) -> devuelve el typo
 ```py
 i = 42
 type(i)
-print("i vale:", i)
 f = float(i)
 42.0
 ```
@@ -75,7 +63,7 @@ type ival
 
 # Read User
 nam = raw_input('Who are you?')
-print ('Welcome',nam)
+print 'Welcome',nam
 
 # Converting user input
 inp = raw_input('Europe floor?')
@@ -126,7 +114,7 @@ print s[:]
 
 (*) second number of the slice is not included
 
-### String concatenation 
+### String concatenation
 ```py
 a = 'Hello'
 b = a + 'There'
@@ -149,7 +137,7 @@ if word == 'banana':
     print 'All right, bananas.'
 
 if word < 'banana':
-    print 'Your word,' + word + ', comes before banana.' 
+    print 'Your word,' + word + ', comes before banana.'
 elif word > 'banana':
     print 'Your word,' + word + ', comes after banana.'
 else:
@@ -182,7 +170,7 @@ pos = fruit.find('na')
 print pos
 >>> 2
 
-if not find return 
+if not find return
 >>> -1
 
 # find x starting at
@@ -239,7 +227,7 @@ print float(text[atpos+1:])
 ### Operators
 
 ```py
-< 
+<
 <=
 ==
 >=
@@ -269,7 +257,7 @@ else:
     print 'Smaller'
 print 'All done'
 ```
-    
+
 ### if / else / elif
 ```py
 if x < 2:
@@ -338,15 +326,15 @@ continue
 
 ### For
 ```py
-# ex 1 
+# ex 1
 for i in [5,4,3,2,1]:
     print i
 
 
-# ex 2 
+# ex 2
 friends = ['Jose', 'Chucha', 'Petuso']
 
-for friend in friends : 
+for friend in friends :
     print 'Hello ', friend
 
 print 'Done'
@@ -408,7 +396,7 @@ print s[:]
 ```py
 friends = ['Joseph', 'Glenn', 'Sally']
 
-for friend in friends: 
+for friend in friends:
     print 'Zurmano', friend
 ```
 
@@ -470,7 +458,7 @@ print 'Average', sum(l)/len(l)
 ```
 
 
-### List from string 
+### List from string
 
 ```py
 abc = 'With three words'
@@ -583,12 +571,6 @@ print jjj.items();
 [('money',12), ('tisues',75), ('candy',5)]
 ```
 
-### Ordering
-```py
-my_dict = {'money': 12,'tisues': 75, 'candy': 5}
-my_dict_sorted = sorted(my_dict)
-print(my_dict_sorted)
-```
 
 ## Tuples
 
@@ -608,7 +590,7 @@ x = (3,2,1,)
 # asignment
 (x,y) = (4,'fred')
 print y
-    
+
 # tuple assignment no parenthesis
 x,y = (4,'fred')
 print x
@@ -677,7 +659,7 @@ print tmp.sort(reverse=True) # reverse=True say highest to smallest
 >>> [(22,'c'),(10,'a'),(1,'b')]
 
     # sorted() - hace lo mismo que el anterior pero elimina un paso (*) +clever!
-    
+
     c = {'a':10,'b':1,'c':22}
     print sorted( [ (v, k) for k,v in c.items() ] ) # creating a list from tupple v,f and a for to reverse
     print tupple
@@ -702,12 +684,12 @@ rawstr = raw_input('Introduce un número mayor que 0: ');
 
 try:
     istr = int(rawstr)
-    
+
     if istr > 5:
         output = 'Qué máquina eres!!'
     else:
         output = '¡¡Te dije mayor que 0 truán!!'
-        
+
 except:
     output = 'Fuera de rango!!'
 
@@ -721,22 +703,22 @@ print output
 class Character:
     # constructor
     # ::= __init__(self, arg1, arg2, ...)
-    def __init__(self, name, initial_health): 
+    def __init__(self, name, initial_health):
         # init variable referenced in the same object and a field
         # ::= self.arg
         self.name = name
         self.health = initial_health
         # create no related argument field
         self.inventory = []
-        
-    # to string 
+
+    # to string
     # ::= __str__(self)
     def __str__(self):
         s  = "Name: " + self.name
         s += " Health: " + str(self.health)
         s += " Inventory: " + str(self.inventory)
         return s
-    
+
 
     # behaviors
     # a program can add infinite behaviours inside the object
@@ -744,13 +726,13 @@ class Character:
     def grab(self, item):
 
         self.inventory.append(item)
-        
+
     def get_health(self):
         return self.health
 
-# 
+#
 # Using objects
-# 
+#
 def example():
 
     # inicio el objeto pasando la clase
@@ -807,7 +789,7 @@ for line in fhand:
 # Prompt for a file
 fname = raw_input('Enter file name:')
 try:
-    fhand = open(fname)    
+    fhand = open(fname)
 except:
     print 'hey, eso no tiene pinta de nombre de archivo.'
     exit()
@@ -841,7 +823,7 @@ r = map(func, seq)
 ```py
 def fahrenheit(T):
     return ((float(9)/5)*T + 32)
- 
+
 def celsius(T):
     return (float(5)/9)*(T-32)
 
@@ -864,7 +846,7 @@ print(temperatures_in_Celsius)
 ## Lambda
 
 ```py
-C = [39.2, 36.5, 37.3, 38, 37.8] 
+C = [39.2, 36.5, 37.3, 38, 37.8]
 F = list(map(lambda x: (float(9)/5)*x + 32, C))
 print(F)
 [102.56, 97.7, 99.14, 100.4, 100.03999999999999]

@@ -32,7 +32,7 @@ git config --system
 # Para todos los proyectos del usuario. Se guarda en ~/.gitconfig
 git config --global
 # Sólo para el proyecto actual. Se guarda en .git/config.
-git config. 
+git config.
 
 # ejemplo
 git config --global user.name "Pablo Agan"
@@ -50,7 +50,7 @@ git config user.name
 ### Ayuda en línea de comandos:
 ```bash
 git help          # Muestra lista con los comandos existentes
-git help config   # Consultar opciones existentes: 
+git help config   # Consultar opciones existentes:
 git help comando  # Ayuda sobre comando especificado
 git help add      # Ayuda sobre el comando add
 git add --help    # Equivalente a anterior
@@ -74,17 +74,17 @@ git clone https://github.com/jquemada/quiz-2015 /etc/user/mi_proyecto
 
 
 # Muestra las versiones del proyecto
-git log --oneline 
+git log --oneline
 # descongela las versiones de la historia
-git checkout <commit_id_SHA1> 
+git checkout <commit_id_SHA1>
 # vuelve a la rama master
-git checkout master 
+git checkout master
 ```
 
 ## GITHUB
 
 ### Fork
-Fork permite copiar un repositorio (proyecto) en nuestra cuenta en GITHUB 
+Fork permite copiar un repositorio (proyecto) en nuestra cuenta en GITHUB
 para acceder a él y evolucionarlo.
 
 
@@ -92,7 +92,7 @@ para acceder a él y evolucionarlo.
 1. "Fork" en la cuenta propia.
 2. Clonar la rama creada en nuestra cuenta en nuestro ordenador local.
 3. Modificar proyecto local -> subir -> GITHUB.
-4. Hacer “Pull Request” desde GITHUB pidiendo al administrador que 
+4. Hacer “Pull Request” desde GITHUB pidiendo al administrador que
 introduzca nuestros cambios.
 ```bash
 git clone https://github.com/pepe/proy1
@@ -110,8 +110,8 @@ Ficheros indexados para la próxima versión: borrados, nuevos o modificados.
 git add # añade al índice
 git commit # crea versión
 ```
-    
-    (*) OJO! Un fichero modificado pero no indexado no se incluirá 
+
+    (*) OJO! Un fichero modificado pero no indexado no se incluirá
     en la versión.
 
 ### 2. Carpeta .git
@@ -210,7 +210,7 @@ git init --help
 # muestra ayuda en línea (manual) de “git add”
 git add --help
 # muestra ayuda en línea (manual) de “git commit”
-git commit --help 
+git commit --help
 ```
 
 
@@ -242,7 +242,7 @@ git log -p -1             # La historia de diferencias entre commits se muestra 
 
 ## Master y HEAD
 
-### Master: 
+### Master:
 Rama principal del desarrollo. Git init inicia el proyecto en la rama master.
 Las versiones se crean en master (salvo que se pase a otra rama).
 
@@ -255,7 +255,7 @@ Versión (commit) actual del directorio de trabajo. Cada "git commit ..." crea u
 # eliminar
 git reset "commit_id"
 # listar commits
-git log --oneline 
+git log --oneline
 
 git reset 34ac2   # restaura versión 34ac2 ‘añadir ejemplo’ dejando los cambios
                     # realizados en las versiones eliminadas en directorio de trabajo
@@ -270,7 +270,7 @@ git reset --hard 34ac2    # restaura 34ac2 ‘añadir ejemplo’ eliminando
 ```bash
 git status
 ```
- 
+
 * **Untracked**: Ficheros que no están bajo el control de versiones.
 * **Tracked**: Ficheros registrados en versión (con git add .).
 * **Modified**: Ficheros modificados, no incluidos en próximo commit con "git add".
@@ -281,16 +281,16 @@ git status
 
 ## Borrar archivos
 
-El comando del S.O. rm borra ficheros del directorio de trabajo, pero no 
+El comando del S.O. rm borra ficheros del directorio de trabajo, pero no
 los borra del staging area.
 
 ```bash
-rm CharIO.java 
+rm CharIO.java
 # Borra el fichero del directorio de trabajo y del staging area.
 git rm CharIO.java
 # Borra fichero del staging area. No lo borra del directorio de trabajo.
 # Tras el próximo commit dejará de estar tracked.
-git rm --cached CharIO.java 
+git rm --cached CharIO.java
 # Es como hacer una modificación en el contenido del fichero.
 ```
 
@@ -320,14 +320,14 @@ Rama: desarrollo que diverge de la rama master o de otra rama.
 git branch
 # Crear ramas
 git branch <nombre_de_rama>
-# Cambiar rama: 
+# Cambiar rama:
 git checkout <nombre_rama>
 # aportes a la rama
 git commit -m 'Siguiente version principal'
 # deshace cambios staged de area de trabajo
-git checkout . 
+git checkout .
 # deshace cambios stagged de <fichero> en area de trabajo
-git checkout -- <fichero> 
+git checkout -- <fichero>
 ```
 
 
@@ -336,7 +336,7 @@ git checkout -- <fichero>
 git merge <rama>
 # Ejemplo:
 git checkout master   # Estamos en la rama master
-git merge iss53       # incorporamos los cambios hechos 
+git merge iss53       # incorporamos los cambios hechos
                         # en la rama iss53 en la rama master
 ```
 
@@ -344,11 +344,7 @@ git merge iss53       # incorporamos los cambios hechos
 Si dos ramas han modificado las mismas líneas de un fichero. No se realiza el commit y se marcan conflictos. Ej:
 
 ```bash
-<<<<<<< HEAD:index.html
-<div id="footer">contact : email.support@github.com</div>
-=======
 <div id="footer">contact us at support@github.com</div>
->>>>>>> iss53:index.html
 ```
 
 ##### mostrar unmerged
@@ -387,7 +383,7 @@ git remote
 git remote -v
 # crear remote shortname URL
 git remote add origin git://github.com/pepe/planet.git
-# Inspeccionar detalles de un remote: 
+# Inspeccionar detalles de un remote:
 git remote show [nombre_del_remote]
 # Renombrar un remote
 git remote rename nombre_viejo nombre_nuevo
@@ -440,8 +436,8 @@ git pull
 # Crear una tracking branch
 git checkout -b <branchname> <remotename>/<branchname>
 # Se crea una rama local con seguimiento a remota
-git checkout --track <remotename>/<branchname> 
-# listar 
+git checkout --track <remotename>/<branchname>
+# listar
 git branch -vv
 git remote show <remote_name>
 ```
@@ -466,7 +462,7 @@ git pull
 # Por defecto se realiza un pull de origin.
 # Este comando ejecuta un fetch con los argumentos dados, y despues realiza
 # un merge en la rama actual con los datos descargados.
-git pull pepito demo 
+git pull pepito demo
 ```
 
 
@@ -510,7 +506,7 @@ git rebase -i HEAD~7
 pick f392171 Removed most clearfixs in templates
 pick ba9dd9a Removed most clearfixs in templates
 
-# cambiamos a 
+# cambiamos a
 pick f392171 Removed most clearfixs in templates
 squash ba9dd9a Removed most clearfixs in templates # este cambia pick por squash
 ```

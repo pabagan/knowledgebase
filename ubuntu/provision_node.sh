@@ -1,4 +1,8 @@
-#!/bin/bash
 
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+# -------------------------------------
+#
+# NodeJs and npm
+#
+# -------------------------------------
+# Using Ubuntu 16.04 default repo
 sudo apt-get install -y nodejs

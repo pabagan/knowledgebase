@@ -1,0 +1,7 @@
+# Editor de texto predet
+# -------------------------------------------------
+ls /usr/share/applications/sublime_text.desktop
+
+sudo subl /usr/share/applications/defaults.list
+
+replace gedit with sublime_text

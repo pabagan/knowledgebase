@@ -39,10 +39,10 @@ updated_at
 ## Categorías
 
 ```bash
-sanitario 
+sanitario
 formativo (reglada y no reglada) # hay subcategorías??
-juventud 
+juventud
 ocio (deporte, cultura, naturaleza...)  # idem, hay subcategorías??
-social 
+social
 laboral
 ```

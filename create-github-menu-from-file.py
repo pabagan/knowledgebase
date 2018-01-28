@@ -1,6 +1,6 @@
 import re
 
-# The programs takes one file with github sintax 
+# The programs takes one file with github sintax
 # and build a file with a github navigation.
 #
 # Example:
@@ -23,7 +23,6 @@ import re
 #filename = "Ruby/RubyOnRails/Web_Services_with_MongoDB.md"
 filename = "MySQL/README.md"
 filename = "python/python101s.md"
-filename = "typescript/README.md"
 
 
 fhand = open(filename)
@@ -41,7 +40,7 @@ for line in fhand:
 # print nav_items
 
 #
-# 2. Build menu in a new file 
+# 2. Build menu in a new file
 # filename + "_nav".
 #
 def build_nav_item(name):
@@ -71,7 +70,7 @@ for line in nav_items:
 		continue
 	# build menu item string
 	nav_content += build_nav_item(line) + "\n"
-	
+
 
 #
 # 3. Create & Write new file
