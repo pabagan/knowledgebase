@@ -30,7 +30,7 @@ firebase deploy --only functions:helloWorld
 
 ## Execute in Local
 ```sh
-firebase serve --only functions
+firebase serve --only functionsa
 firebase experimental:functions:shell
 
 # ... both methods are hot-reloading on code change.. coooooooooool!
@@ -48,16 +48,31 @@ firebase functions:config:set someservice.key="THE API KEY"
 # get
 firebase functions:config:get
 # unset
-firebase functions:config:unset [key1] [key2...]
+firebase functions:config:unsenpmt [key1] [key2...]
 # clone
 firebase functions:config:clone --from <fromProject>
-
 # eg
-firebase functions:config:unset gcs.keyfilename
-firebase functions:config:set gcs.keyfilename="./config/certs/development-cert.json"
+firebase functions:config:unset service_account
+firebase functions:config:unset service_account.service_account
+firebase functions:config:set remaze.email="april@klikkie.nl"
+firebase functions:config:set remaze.api_url="https://klikkie.reamaze.io/api/v1/contacts/"
+
+firebase functions:config:set adyen.dropin.payment_methods="https://checkout-test.adyen.com/v49/paymentMethods"
+firebase functions:config:set adyen.dropin.payments="https://checkout-test.adyen.com/v49/payments"
+firebase functions:config:set adyen.dropin.payments_details="https://checkout-test.adyen.com/v49/payments/details"
+
+firebase functions:config:set paypal.account="test@klikkie.com"
+firebase functions:config:set paypal.mode="sandbox"
+firebase functions:config:set paypal.client_id="ASGHzRKeR2jzjfCs15XDyfHJAlcAboZSur5_z83cWTeauFrUk26W_WmPyNQ4_4mGUqYdlq8_wqnXqJt-"
+firebase functions:config:set paypal.client_secret="ELyjGvpz0_y4ItFI4A9xIxTGsv_-_rDwVnf79ieWZl0ZEiwSaWIsMTA_XZBJi4GnnZbfsJ6jyDou9MXk"
+
+
+# Clone from another project
+firebase functions:config:clone --from <fromProject>
 ```
 
 ### Reading environment from APP
+Run `firebase functions:log`
 ```js
 const functions = require('firebase-functions');
 const request = require('request-promise');

@@ -11,18 +11,8 @@ import re
 #
 # 1. Build a list with menu items from file
 #
-#filename = "README.md"
-#filename = "./SMACSS/README.md"
-#filename = "./GIT/GIT_101s.md"
-#filename = "./Sass/README.md"
-# Rails
-#filename = "Ruby/RubyOnRails/Active_Record.md"
-#filename = "Ruby/RubyOnRails/Action_Pack.md"
-#filename = "Ruby/RubyOnRails/i18n.md"
-#filename = "Ruby/RubyOnRails/Rails_Basics.md"
-#filename = "Ruby/RubyOnRails/Web_Services_with_MongoDB.md"
-filename = "MySQL/README.md"
-filename = "python/python101s.md"
+filename = "README.md"
+
 
 
 fhand = open(filename)
@@ -61,10 +51,11 @@ new_file_name = filename.replace('.md', '') + '-nav.md'
 nav_heading = "Table of contents"
 nav_content = ''
 nav_content += "## " + nav_heading + "\n"
-# Lopp in item list calling helper
+
+# Loop in item list calling helper
 # built_na_item.
 for line in nav_items:
-	print line
+	print (line)
 	# avoid insert self heading
 	if nav_heading in line:
 		continue
@@ -78,4 +69,4 @@ for line in nav_items:
 filename_nav = open(new_file_name, 'w+')
 filename_nav.write(nav_content)
 
-print new_file_name , 'created!'
+print (new_file_name , 'created!')

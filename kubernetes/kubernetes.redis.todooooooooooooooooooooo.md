@@ -1,0 +1,1 @@
+Configuring Redis using a ConfigMap
