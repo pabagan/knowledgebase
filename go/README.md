@@ -3,6 +3,8 @@
 * [Go 101s](https://go101.org/article/101.html)
 * [Go Wiki](https://github.com/golang/go/wiki/CodeReview)
 
+## Explore Go libraries
+* https://github.com/avelino/awesome-go
 
 ## Install deps
 
@@ -10,6 +12,41 @@
 # install dependency
 go get -u [route]
 go get -u github.com/tonyalaribe/todoapi/basestructure/features/todo
+```
+
+## Go toolchain
+
+* Step 1: download [go](https://golang.org/dl/) for your system.
+* Step 2: test installation
+```go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Printf("hello, world\n")
+}
+```
+
+```sh
+# build
+go build hello.go
+
+# run 
+$ ./hello
+hello, world
+```
+
+### Intalling extra versions
+
+```sh
+go get golang.org/dl/go1.10.7
+
+go1.10.7 download
+
+# Use new version
+go1.10.7 version
+go version go1.10.7 linux/amd64
 ```
 
 ## Import packages
@@ -81,17 +118,19 @@ import "fmt"
 var c, python, java bool
 
 func main() {
-  // Zero value variables
+	// Zero value variables
   var i int
 	var f float64
 	var b bool
-	var s string
+  var s string
+  
   fmt.Printf("%v %v %v %q\n", i, f, b, s)
   
   var i int
+
   fmt.Println(i, c, python, java)
   
-// Variables with initializers
+  // Variables with initializers
   var i, j int = 1, 2
 
   // Short variable declarations
