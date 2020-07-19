@@ -1,0 +1,10 @@
+{
+  "watch": [
+    "./"
+  ],
+  "ext": "go",
+  "ignore": [
+    "./sandbox"
+  ],
+  "exec": "go build sandbox.go && ./sandbox"
+}

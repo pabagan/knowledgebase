@@ -1,6 +1,7 @@
 # GO
 
 * [Go 101s](https://go101.org/article/101.html)
+* [Go tour](https://tour.golang.org/list)
 * [Go Wiki](https://github.com/golang/go/wiki/CodeReview)
 
 ## Explore Go libraries
@@ -18,6 +19,7 @@ go get -u github.com/tonyalaribe/todoapi/basestructure/features/todo
 
 * Step 1: download [go](https://golang.org/dl/) for your system.
 * Step 2: test installation
+
 ```go
 package main
 
@@ -86,6 +88,9 @@ func add(x int, y int) int {
 }
 
 // multiple result
+// x int, y int
+// to
+// x, y int
 func swap(x, y string) (string, string) {
 	return y, x
 }
