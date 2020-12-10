@@ -21,6 +21,7 @@ npmGlobalDeps=(
   depcheck
   firebase-bolt
   npm-check-updates
+  ava
 )
 
 . ~/.nvm/nvm.sh

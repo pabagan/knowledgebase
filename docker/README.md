@@ -8,6 +8,7 @@ docker pull <hubLinkToRepo>
 docker pull google/cloud-sdk
 
 # Create container
+docker build --tag <name> .
 # Start container
 docker container start gcloud-config
 # see container running
