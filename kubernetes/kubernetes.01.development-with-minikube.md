@@ -1,11 +1,16 @@
-## Install minikube
+# Install Minikube
+
+* [Minikube install](https://minikube.sigs.k8s.io/docs/start/).
+
 Need [Minikube](https://kubernetes.io/docs/setup/minikube/) and [Virtual Box](https://www.virtualbox.org/) or similar installed to create Kubernetes cluster.
 
+Mac:
 ```sh
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo cp minikube /usr/local/bin/ && rm minikube
+brew install minikube
+brew install virtuialbox
 ```
 
-Start a Cluster:
+## Start a Cluster:
 ```sh
 # start minikube
 minikube start

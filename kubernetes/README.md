@@ -1,10 +1,10 @@
 # Kubernetes
 
 * [Kubernetes](https://kubernetes.io/docs/home/?path=users&persona=app-developer&level=foundational)
-
+kubernetes.00.install-minikube.md
 ## Kubernetes tasks
 * [Install](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.00.install.md).
-* [Development](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.01.development.md).
+* [Development](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.01.development-with-minikube.md).
 * [Deploy](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.02.deploy.md).
 * [Expose](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.03.expose.md).
 * [Update](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.04.update-and-roll-back.md).

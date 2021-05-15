@@ -20,14 +20,6 @@ Config `~/.kube/config`
 kubectl completion -h
 ```
 
-## Kubctl cluster
-```bash
-# display info
-kubectl cluster-info
-# see nodes
-kubectl get nodes
-```
-
 ## Mac
 
 * [Install Macos](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/).
@@ -37,6 +29,16 @@ kubectl get nodes
 brew install kubectl
 ```
 
+
+## Check install
+```bash
+# display info
+kubectl cluster-info
+# see nodes
+kubectl get nodes
+# version
+kubectl version
+```
 
 ## Credit
 https://kubernetes.io/docs/tutorials/kubernetes-basics/
