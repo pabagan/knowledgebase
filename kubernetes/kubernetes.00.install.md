@@ -1,5 +1,7 @@
 # Install Kubetcl
 
+
+### Linux
 https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
 ```sh
@@ -25,5 +27,16 @@ kubectl cluster-info
 # see nodes
 kubectl get nodes
 ```
+
+## Mac
+
+* [Install Macos](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/).
+
+```sh
+# with brew
+brew install kubectl
+```
+
+
 ## Credit
 https://kubernetes.io/docs/tutorials/kubernetes-basics/
