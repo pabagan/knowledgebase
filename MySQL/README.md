@@ -249,3 +249,94 @@ GROUP BY customer.customer_id
 ORDER BY total_amount DESC
 LIMIT 10
 ```
+
+
+```sql
+-- Your are working for a company that wants to reward its top 10 customers with a free gift. You have been asked to generate a simple report that returns the top 10 customers by total amount spent ordered from highest to lowest. Total number of payments has also been requested.
+
+-- The query should output the following columns:
+
+--     customer_id [int4]
+--     email [varchar]
+--     payments_count [int]
+--     total_amount [float]
+
+-- and has the following requirements:
+
+--     only returns the 10 top customers, ordered by total amount spent from highest to lowest
+SELECT 
+  c.customer_id AS customer_id, 
+  c.email AS email,
+  COUNT(p.amount) as payments_count,
+  SUM(CAST(p.amount AS FLOAT)) as total_amount
+FROM customer as c, payment as p
+WHERE c.customer_id = p.customer_id
+GROUP BY c.customer_id
+ORDER BY total_amount DESC
+LIMIT 10
+```
+
+```sql
+-- Timmy works for a statistical analysis company and has been given a task of calculating the highest average salary for a given job, the sample is compiled of 100 applicants each with a job and a salary. Timmy must display each unique job, the total average salary, the total people and the total salary and order by highest average salary. Timmy has some bugs in his query, help Timmy fix his query so he can keep his job!
+-- people table schema
+--     id
+--     name
+-- job table schema
+--     id
+--     people_id
+--     job_title
+--     salary
+-- resultant table schema
+--     job_title (unique)
+--     average_salary (float, 2 dp)
+--     total_people (int)
+--     total_salary (float, 2 dp)
+SELECT 
+  j.job_title,
+  ROUND(AVG(j.salary),2)::FLOAT as average_salary,
+  COUNT(p.id) as total_people,
+  ROUND(SUM(j.salary),2)::FLOAT as total_salary
+  FROM people AS p
+    JOIN job AS j ON p.id = j.people_id 
+  GROUP BY j.job_title
+  ORDER BY average_salary DESC
+```
+
+```sql
+-- You have access to two tables named top_half and bottom_half, as follows:
+-- top_half schema
+--     id
+--     heads
+--     arms
+-- bottom_half schema
+--     id
+--     legs
+--     tails
+-- You must return a table with the format as follows:
+-- output schema
+--     id
+--     heads
+--     legs
+--     arms
+--     tails
+--     species
+-- The IDs on the tables match to make a full monster. For heads, arms, legs and tails you need to draw in the data from each table.
+-- For the species, if the monster has more heads than arms, more tails than legs, or both, it is a 'BEAST' else it is a 'WEIRDO'. This needs to be captured in the species column.
+SELECT 
+  top.id,
+  top.heads,
+  bottom.legs,
+  top.arms,
+  bottom.tails,
+  CASE WHEN top.heads > top.arms OR bottom.tails > bottom.legs
+    THEN 'BEAST'
+    ELSE 'WEIRDO'
+  END as species
+
+FROM 
+  top_half AS top
+JOIN
+  bottom_half AS bottom
+ON top.id = bottom.id
+ORDER BY species
+```

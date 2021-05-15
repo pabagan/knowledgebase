@@ -3,14 +3,15 @@
 * [Kubernetes](https://kubernetes.io/docs/home/?path=users&persona=app-developer&level=foundational)
 
 ## Kubernetes tasks
-* [Install](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.install.md).
-* [Development](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.development.md).
-* [Expose](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.expose.md).
-* [Deploy](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.deploy.md).
-* [Update](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.update.md).
-* [Scale](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.scale.md).
+* [Install](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.00.install.md).
+* [Development](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.01.development.md).
+* [Deploy](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.02.deploy.md).
+* [Expose](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.03.expose.md).
+* [Update](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.04.update-and-roll-back.md).
+* [Scale](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.05.scale-and-down-scale.md).
 
-## GCloud Example
+## GCloud
+* [Kubernetes in GCloud](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.gCloud.md).
 * [GCloud Quickstart example](https://github.com/pabagan/knowledgebase/blob/master/kubernetes/kubernetes.googleAppEngine.example.md)
 
 ## Create Cluster

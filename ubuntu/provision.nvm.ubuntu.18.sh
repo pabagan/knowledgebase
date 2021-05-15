@@ -52,5 +52,9 @@ npm i -g ${npmGlobalDeps[@]}
 nvm install lts/erbium
 npm i -g ${npmGlobalDeps[@]}
 
-# back to default node version 
+# Node 14
+nvm install lts/fermium 
+npm i -g ${npmGlobalDeps[@]}
+
+back to default node version 
 nvm use default
