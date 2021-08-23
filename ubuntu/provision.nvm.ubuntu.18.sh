@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 # -------------------------------------
 #
 # NodeJs NVM
-# https://github.com/nvm-sh/nvm
+# https://github.com/nvm-sh/nvmmb
 # -------------------------------------
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
@@ -27,6 +27,7 @@ npmGlobalDeps=(
 . ~/.nvm/nvm.sh
 . ~/.profile
 . ~/.bashrc
+. ~/.zshenv
 
 # Last version
 nvm install node
@@ -56,5 +57,9 @@ npm i -g ${npmGlobalDeps[@]}
 nvm install lts/fermium 
 npm i -g ${npmGlobalDeps[@]}
 
-back to default node version 
+# Node 16
+# nvm install lts/gallium 
+# npm i -g ${npmGlobalDeps[@]}
+
+# back to default node version 
 nvm use default
