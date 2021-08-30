@@ -169,6 +169,28 @@ query ViewerInfo($isOwner: Boolean!) {
 
 pass the variable in the query variables dashboard at: https://docs.github.com/en/graphql/overview/explorer
 
+**fragments**
+
+https://www.apollographql.com/docs/react/data/fragments/
+
+
+```graphql
+query AllCharacters {
+  all_characters {
+    ... on Character {
+      name
+    }
+
+    ... on Jedi {
+      side
+    }
+
+    ... on Droid {
+      model
+    }
+  }
+}
+```
 ### Mutations
 Make changes to the data. Mutations are run in series.
 
