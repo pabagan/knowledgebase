@@ -288,6 +288,85 @@ vault token create -policy=my-policy -ttl=60m
 # view properties
 vault token lookup [options] [ACCESSOR | ID]
 vault token lookup -accessor FJSJSFJDSFJMEWMDFS
+
+# check capabilities on a path
+vault token capabilities TOKEN PATH
+vault token capabilities FJSJSFJDSFJMEWMDFS secrets/apikeys/
 ```
+
+### Services and Batch token
+**service**
+- Fully featured, heavyweight.
+- Managed by accessor or ID.
+- Written to persistent storage.
+- Calculated lifetime.
+- Renewable if desired.
+- Can create child tokens.
+- Default type for most situations.
+- Begis with "s." in ID.
+
+**batch**
+- Limited features, lightweight.
+- has no accessor.
+- Not written to storage.
+- Static lifetime.
+- Never renewable.
+- No child tokens.
+- Explicitly created.
+- Begins with "b." in ID
+
+### Token TTL (Time To Live) and operate with it
+
+```sh
+# Properties
+creation_time
+creation_ttl
+expire_time
+explicit_max_ttl
+issue_time
+ttl
+
+# renew a token
+vault token renew [OPTIONS] [ACCESSOR | ID] [increment=<duration>]
+vault token renew -increment=60m
+
+# revoque a token
+vault token revoke [OPTIONS] [ACCESSOR | ID]
+vault token revoke -accessor FJA234DSFASDF
+
+```
+
+There are these types of definition
+1. System max TTL: is globaly defined. Is configured in the vault configuration file. It has dynamic evaluation.
+2. Mount max TTL: is mount specific. Can be changed with tuning. Override system max. It can be greater or less than system.
+3. Auth method max TTL: Role, group or user can set its TTL. Override system and mount TTL. It has to be less than system or mount.
+
+**explicit max ttl**
+Takes precedence over other method. Set at token creation (explicit or implicit). It has static evaluation. It is less than effective max TTL.
+
+### Periodic Tokens
+* Do not expire (no max TTL)
+* Must be renewed base on period.
+* TTL set to period at creation and renewal.
+* Requires sudo privileges to create.
+* Explicit max TTL can be applied.
+
+Use case:
+* Database system will use token for secrets access.
+* System does not support dynamically changing the token value.
+
+Solution:
+* Create a periodic token for the database system to use.
+* Script a process to renew the token at the necessary interval.
+
+```sh
+vault token create -policy=default -period=2h
+```
+
+### Token hierarchy
+
+Child tokens are created by a parent token. Batch tokens cannot create children. Protects against escaping revocation. Orphans tokens have no parent token
+
+
 ## Credit
 * https://app.pluralsight.com/library/courses/hashicorp-certified-vault-associate-getting-started

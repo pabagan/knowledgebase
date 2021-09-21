@@ -5,7 +5,7 @@ vault server -dev
 export VAULT_ADDR=http://127.0.0.1:8200
 
 # And log into Vault using the root token
-vault login 
+vault login
 
 # First let's see what auth methods are avilable now
 vault auth list

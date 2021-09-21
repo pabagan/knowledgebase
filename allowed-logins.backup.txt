@@ -1,0 +1,57 @@
+
+import "sockaddr"
+import "strings"
+
+#By default remote oidc logins are enabled.
+#You can add specific ip ranges here.
+#Add only 127.0.0.1/32 to disable remote oidc login,
+#but first make sure that you have some other login
+#method enabled!
+oidcAllowedCidrs = [
+  "0.0.0.0/0",
+]
+
+#By default remote non oidc logins are disabled.
+#You can add specific ip ranges here.
+# Add only 0.0.0.0/0 to enable remote non oidc login
+#from everywhere.
+nonOidcAllowedCidrs = [
+  "127.0.0.1/32",
+]
+
+isIpAllowed = func (cidrs) {
+  print ("Remote address:", request.connection.remote_addr)
+  print ("Allowed ranges:", cidrs)
+  allowed = false
+  for cidrs as cidr {
+    allowed = allowed or sockaddr.is_contained(cidr, request.connection.remote_addr)
+  }
+  return allowed
+}
+
+oidc = rule when strings.has_prefix(request.path, "auth/oidc") {
+  isIpAllowed (oidcAllowedCidrs)
+}
+
+non_oidc = rule when (not strings.has_prefix(request.path, "auth/oidc") and login_path) {
+  #lookup_self must be allowed for the ui logins.
+  #Because of this logins with tokens will be allowed from anywhere.
+  (request.path == "auth/token/lookup-self") or isIpAllowed (nonOidcAllowedCidrs)
+}
+
+is_login_path = func(path) {
+    parts = strings.split(path, "/")
+    print (parts)
+    if parts[0] == "auth" and parts[2] == "login" {
+       return true
+    }
+    return false
+}
+
+login_path = rule {
+    is_login_path(request.path)
+}
+
+main = rule {
+  oidc and non_oidc
+}
